@@ -1,4 +1,5 @@
 data "aws_ami" "os_image" {
+  #owners      = ["723858002496"]
   owners      = ["099720109477"]
   most_recent = true
   filter {
@@ -13,7 +14,7 @@ data "aws_ami" "os_image" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "terra-automate-key"
-  public_key = file("terra-key.pub")
+  public_key = file("~/.ssh/terra-key.pub")
 }
 
 resource "aws_security_group" "allow_user_to_connect" {
