@@ -9,7 +9,7 @@ pipeline {
         DOCKER_MIGRATION_IMAGE_NAME = 'techsysvbo/easyshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
         GITHUB_CREDENTIALS = credentials('github-credentials')
-        GIT_BRANCH = "main"
+        GIT_BRANCH = "master"
     }
     
     stages {
@@ -24,7 +24,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    clone("https://github.com/techsysvbo/tws-e-commerce-app_hackathon.git","main")
+                    clone("https://github.com/techsysvbo/tws-e-commerce-app_hackathon.git","master")
                 }
             }
         }
